@@ -1,0 +1,16 @@
+joblib
+folium
+matplotlib
+streamlit
+pandas
+seaborn
+numpy
+plotly
+streamlit_folium
+boto3
+scikit-learn
+xgboost==1.4.2.
+streamlit-aggrid
+pyautogui
+geopandas
+# tk
