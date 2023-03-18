@@ -91,7 +91,7 @@ def dashboard (data):
      fig.add_subplot(gs[1,0])
      df = data[['bedrooms','price']].groupby('bedrooms').mean().reset_index()
 
-     sns.barplot(df['bedrooms'], df['price'], color = 'orange')
+     sns.barplot(x = df['bedrooms'], y = df['price'], color = 'orange')
      plt.ylabel('Price (Millions of Dollars)', fontsize = 20)
      plt.xlabel('No. of bedrooms', fontsize = 20)
      plt.xticks(fontsize=16)
@@ -99,7 +99,7 @@ def dashboard (data):
      # Tercer gráfico
      fig.add_subplot(gs[1,1])
      df = data[['bathrooms','price']].groupby('bathrooms').mean().reset_index()
-     sns.barplot(df['bathrooms'], df['price'], color = 'orange')
+     sns.barplot(x = df['bathrooms'], y = df['price'], color = 'orange')
      plt.ylabel('Price (Millions of Dollars)', fontsize = 20)
      plt.xlabel('No. of bathrooms', fontsize = 20)
      plt.xticks(fontsize=16)
