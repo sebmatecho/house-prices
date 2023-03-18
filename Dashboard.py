@@ -103,8 +103,8 @@ def dashboard (data):
      sns.barplot(x = df['bathrooms'], y = df['price'], color = 'orange')
      plt.ylabel('Price (Millions of Dollars)', fontsize = 20)
      plt.xlabel('No. of bathrooms', fontsize = 20)
-     plt.xticks(fontsize=16)
-     plt.yticks(fontsize=16, rotation=90)
+     plt.xticks(fontsize=16, rotation=90)
+     plt.yticks(fontsize=16)
      st.pyplot(fig)
      return None
 
