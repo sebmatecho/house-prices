@@ -79,7 +79,7 @@ def dashboard (data):
      fig.add_subplot(gs[0,:])
      # primer gráfico
      df = data[['yr_built', 'price']].groupby('yr_built').mean().reset_index()
-     sns.lineplot(df['yr_built'], df['price'], color = 'orange')
+     sns.lineplot(x = df['yr_built'], y = df['price'], color = 'orange')
      plt.ylabel('Price (Millions of Dollars)', fontsize = 20)
      plt.xlabel('Year of construction', fontsize = 20)
      plt.xticks(fontsize=16)
