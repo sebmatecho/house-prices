@@ -61,6 +61,7 @@ def folium_static(fig, width=1200, height=750):
 def get_file():
      url = 'https://raw.githubusercontent.com/sebmatecho/CienciaDeDatos/master/ProyectoPreciosCasas/data/kc_house_data.csv'
      data = pd.read_csv(url)
+     data = data[data['bedrooms']!=33]
      return data
 
 @st.cache_data()#allow_output_mutation=True)
