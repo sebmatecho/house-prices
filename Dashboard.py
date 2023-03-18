@@ -56,13 +56,13 @@ def folium_static(fig, width=1200, height=750):
             fig._repr_html_(), height=height + 10, width=width
         )
 # Load
-@st.cache(allow_output_mutation=True)
+@st.cache_data(allow_output_mutation=True)
 def get_file():
      url = 'https://raw.githubusercontent.com/sebmatecho/CienciaDeDatos/master/ProyectoPreciosCasas/data/kc_house_data.csv'
      data = pd.read_csv(url)
      return data
 
-@st.cache(allow_output_mutation=True)
+@st.cache_data(allow_output_mutation=True)
 def get_geofile():
      url = 'https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson'
      geofile = gpd.read_file(url)

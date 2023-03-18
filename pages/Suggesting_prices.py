@@ -17,7 +17,7 @@ st.set_page_config(page_title='App - Suggesting prices',
 st.title("Suggesting propertie prices")
 st.sidebar.markdown("Description of the property")
 
-@st.cache(allow_output_mutation=True)
+@st.cache_data(allow_output_mutation=True)
 def get_data():
      url = 'https://raw.githubusercontent.com/sebmatecho/CienciaDeDatos/master/ProyectoPreciosCasas/data/kc_house_data.csv'
      return pd.read_csv(url)
