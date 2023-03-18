@@ -393,7 +393,7 @@ def load(data,geo_data):
 
      st.header("Where are these properties?")
 
-     info_geo(data)
+     # info_geo(data)
 
      # Estadística Descriptiva 
 
