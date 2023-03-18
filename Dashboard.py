@@ -119,7 +119,7 @@ def mapa1(data,geo_info,width=1100, height=750):
                          threshold_scale=custom_scale,
                          fill_color='YlOrRd',
         highlight=True).add_to(mapa)
-     folium_static(mapa, width=0.33*width, height=0.33*width)
+     folium_static(mapa, width=0.38*width, height=0.38*width)
      return None
 
 def mapa2(data,geo_info,width=1100, height=750):
