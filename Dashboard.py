@@ -103,7 +103,7 @@ def dashboard (data):
      plt.ylabel('Price (Millions of Dollars)', fontsize = 20)
      plt.xlabel('No. of bathrooms', fontsize = 20)
      plt.xticks(fontsize=16)
-     plt.yticks(fontsize=16)
+     plt.yticks(fontsize=16, rotation=90)
      st.pyplot(fig)
      return None
 
