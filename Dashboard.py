@@ -133,7 +133,7 @@ def mapa2(data,geo_info,width=1100, height=750):
                     threshold_scale=custom_scale,
                     fill_color='YlOrRd',
                     highlight=True).add_to(mapa)
-     folium_static(mapa, width=0.33*width, height=0.33*width)
+     folium_static(mapa, width=0.38*width, height=0.38*width)
      return None
 
 def mapa3(data,geo_info,width=1000, height=750):
@@ -147,7 +147,7 @@ def mapa3(data,geo_info,width=1000, height=750):
                     threshold_scale=custom_scale,
                     fill_color='YlOrRd',
                     highlight=True).add_to(mapa)
-     folium_static(mapa, width=0.33*width, height=0.33*width)
+     folium_static(mapa, width=0.38*width, height=0.38*width)
      return None
 
 def info_geo(data,width=1000, height=750):
@@ -428,5 +428,5 @@ if __name__ =='__main__':
      data2 = transform(data)
      # Load
      dataref = load(data2,geo_data)
-     # info_geo(data)
+     info_geo(data)
      load2(data2,geo_data,dataref)
