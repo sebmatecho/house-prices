@@ -392,11 +392,12 @@ def load(data,geo_data):
 
 
      st.header("Where are these properties?")
+     return data_ref
 
-     # info_geo(data)
+
 
      # Estadística Descriptiva 
-
+def load2(data,geo_data,data_ref):
      st.markdown(
           """
      ### Additional Information
@@ -426,4 +427,6 @@ if __name__ =='__main__':
      # Transform
      data2 = transform(data)
      # Load
-     load(data2,geo_data)
+     dataref = load(data2,geo_data)
+     info_geo(data)
+     load2(data2,geo_data,dataref)
