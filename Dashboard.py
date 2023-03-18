@@ -428,5 +428,5 @@ if __name__ =='__main__':
      data2 = transform(data)
      # Load
      dataref = load(data2,geo_data)
-     info_geo(data)
+     # info_geo(data)
      load2(data2,geo_data,dataref)
