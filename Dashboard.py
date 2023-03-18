@@ -119,7 +119,7 @@ def mapa1(data,geo_info,width=1100, height=750):
                          threshold_scale=custom_scale,
                          fill_color='YlOrRd',
         highlight=True).add_to(mapa)
-     folium_static(mapa, width=0.45*width, height=0.45*width)
+     folium_static(mapa, width=0.33*width, height=0.33*width)
      return None
 
 def mapa2(data,geo_info,width=1100, height=750):
@@ -133,7 +133,7 @@ def mapa2(data,geo_info,width=1100, height=750):
                     threshold_scale=custom_scale,
                     fill_color='YlOrRd',
                     highlight=True).add_to(mapa)
-     folium_static(mapa, width=0.45*width, height=0.45*width)
+     folium_static(mapa, width=0.33*width, height=0.33*width)
      return None
 
 def mapa3(data,geo_info,width=1000, height=750):
@@ -147,7 +147,7 @@ def mapa3(data,geo_info,width=1000, height=750):
                     threshold_scale=custom_scale,
                     fill_color='YlOrRd',
                     highlight=True).add_to(mapa)
-     folium_static(mapa, width=0.45*width, height=0.45*width)
+     folium_static(mapa, width=0.33*width, height=0.33*width)
      return None
 
 def info_geo(data,width=1000, height=750):
@@ -164,7 +164,7 @@ def info_geo(data,width=1000, height=750):
                          fila['sqft_living'], 
                          fila['price/sqft'])
           ).add_to(markercluster)
-     folium_static(mapa, width=width, height=0.45*width)
+     folium_static(mapa, width=width, height=0.33*width)
      return None
 
 def descriptiva(data):
