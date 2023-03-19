@@ -401,7 +401,7 @@ def load(data,geo_data):
      mapa = folium.Map(location=[data['lat'].mean(), data['long'].mean()], zoom_start=9)
      markercluster = MarkerCluster().add_to(mapa)
      # for _ , fila in data.iterrows():
-     for i in [1,2]:
+     for i in range(data.shape[0]):
           folium.Marker([data.loc[i,'lat'],data.loc[i,'long']],#[fila['lat'],fila['long']],
                          popup = 'Price: ${}, \n Date: {} \n {} # rooms \n {} # bathrooms \n Built in {} \n {} square foot \n Price per square foot: {}'.format(
                          data.loc[i,'price'],
