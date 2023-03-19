@@ -391,19 +391,16 @@ def load(data,geo_data):
           AgGrid(df.round(3),fit_columns_on_grid_load=True)
 
 
-     st.header("Where are these properties?")
-     return data_ref
+#      st.header("Where are these properties?")
+     
+#      info_geo(data)
 
-
-
-     # Estadística Descriptiva 
-def load2(data,geo_data,data_ref):
-     st.markdown(
-          """
-     ### Additional Information
-    Finally, the numerical summary of all the variables considered in this database is presented below. Such information can be useful to find trends within clusters that are of interest. 
+#      st.markdown(
+#           """
+#      ### Additional Information
+#     Finally, the numerical summary of all the variables considered in this database is presented below. Such information can be useful to find trends within clusters that are of interest. 
           
-          """)
+#           """)
 
      col1, col2 = st.columns(2)
      col1.metric("No. Properties", data.shape[0],str(100*round(data.shape[0]/data_ref,4))+'% match the criteria',delta_color="off")
@@ -427,6 +424,5 @@ if __name__ =='__main__':
      # Transform
      data2 = transform(data)
      # Load
-     dataref = load(data2,geo_data)
-     # info_geo(data)
-     load2(data2,geo_data,dataref)
+     load(data2,geo_data)
+     
