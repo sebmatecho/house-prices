@@ -2,6 +2,10 @@ import json
 # from tkinter import N
 from matplotlib import gridspec, ticker
 import folium
+
+import folium.plugins
+folium.plugins.MarkerCluster()
+
 import numpy as np
 import pandas as pd
 import seaborn as sns
