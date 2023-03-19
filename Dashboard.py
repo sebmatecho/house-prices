@@ -391,16 +391,30 @@ def load(data,geo_data):
           AgGrid(df.round(3),fit_columns_on_grid_load=True)
 
 
-#      st.header("Where are these properties?")
+     st.header("Where are these properties?")
      
-#      info_geo(data)
+     width, height= 1000, 750
+     mapa = folium.Map(location=[data['lat'].mean(), data['long'].mean()], zoom_start=9)
+     markercluster = MarkerCluster().add_to(mapa)
+     for nombre, fila in data.iterrows():
+          folium.Marker([fila['lat'],fila['long']],
+                         popup = 'Price: ${}, \n Date: {} \n {} # rooms \n {} # bathrooms \n Built in {} \n  {} square foot \n Price per square foot: {}'.format(
+                         fila['price'],
+                         fila['date'],
+                         fila['bedrooms'],
+                         fila['bathrooms'],
+                         fila['yr_built'], 
+                         fila['sqft_living'], 
+                         fila['price/sqft'])
+          ).add_to(markercluster)
+     folium_static(mapa, width=width, height=0.33*width)
 
-#      st.markdown(
-#           """
-#      ### Additional Information
-#     Finally, the numerical summary of all the variables considered in this database is presented below. Such information can be useful to find trends within clusters that are of interest. 
+     st.markdown(
+          """
+     ### Additional Information
+    Finally, the numerical summary of all the variables considered in this database is presented below. Such information can be useful to find trends within clusters that are of interest. 
           
-#           """)
+          """)
 
      col1, col2 = st.columns(2)
      col1.metric("No. Properties", data.shape[0],str(100*round(data.shape[0]/data_ref,4))+'% match the criteria',delta_color="off")
