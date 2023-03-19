@@ -407,7 +407,6 @@ def load(data,geo_data):
                          # fila['yr_built'], 
                          # fila['sqft_living'], 
                          # fila['price/sqft']
-                         )
           ).add_to(markercluster)
      folium_static(mapa, width=width, height=0.33*width)
 
