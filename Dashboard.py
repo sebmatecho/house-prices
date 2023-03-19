@@ -398,14 +398,16 @@ def load(data,geo_data):
      markercluster = MarkerCluster().add_to(mapa)
      for _ , fila in data.iterrows():
           folium.Marker([fila['lat'],fila['long']],
-                         popup = 'Price: ${}, \n Date: {} \n {} # rooms \n {} # bathrooms \n Built in {} \n  {} square foot \n Price per square foot: {}'.format(
-                         fila['price'],
-                         fila['date'],
-                         fila['bedrooms'],
-                         fila['bathrooms'],
-                         fila['yr_built'], 
-                         fila['sqft_living'], 
-                         fila['price/sqft'])
+                         popup = 'this is a test'
+                         # 'Price: ${}, \n Date: {} \n {} # rooms \n {} # bathrooms \n Built in {} \n  {} square foot \n Price per square foot: {}'.format(
+                         # fila['price'],
+                         # fila['date'],
+                         # fila['bedrooms'],
+                         # fila['bathrooms'],
+                         # fila['yr_built'], 
+                         # fila['sqft_living'], 
+                         # fila['price/sqft']
+                         )
           ).add_to(markercluster)
      folium_static(mapa, width=width, height=0.33*width)
 
