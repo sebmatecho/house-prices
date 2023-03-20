@@ -154,6 +154,20 @@ def mapa3(data,geo_info,width=1000, height=750):
      folium_static(mapa, width=0.38*width, height=0.38*width)
      return None
 
+def mapa4(data,geo_info,width=1000, height=750):
+     data_aux = data[['sqft_living','zipcode']].groupby('zipcode').mean().reset_index()
+     custom_scale = (data_aux['sqft_living'].quantile((0,0.2,0.4,0.6,0.8,1))).tolist()
+     mapa = folium.Map(location=[data['lat'].mean(), data['long'].mean()], zoom_start=8)
+     folium.Choropleth(geo_data=geo_info, 
+                    data=data_aux,
+                    key_on='feature.properties.ZIPCODE',
+                    columns=['zipcode', 'sqft_living'],
+                    threshold_scale=custom_scale,
+                    fill_color='YlOrRd',
+                    highlight=True).add_to(mapa)
+     folium_static(mapa, width=0.38*width, height=0.38*width)
+     return None
+
 def info_geo(data,width=1000, height=750):
      mapa = folium.Map(location=[data['lat'].mean(), data['long'].mean()], zoom_start=9)
      markercluster = MarkerCluster().add_to(mapa)
@@ -387,12 +401,16 @@ def load(data,geo_data):
      with col1: 
           st.header("Square foot costing")
           mapa3(data,geo_data)
-          
+
      with col2: 
-          st.header('Summary by ZIP code')
-          df = data[['id','zipcode','price','price/sqft']].groupby('zipcode').agg({'id':'count','price':'mean','price/sqft':'mean'}).reset_index().rename(columns= {'zipcode':'Postal code','id':'Count','price':'Average price','price/sqft':'Average price/sqft'})
-          # st.dataframe(df)
-          AgGrid(df.round(3),fit_columns_on_grid_load=True)
+          st.header("Interior Living Space")
+          mapa2(data,geo_data)
+          
+     
+     st.header('Summary by ZIP code')
+     df = data[['id','zipcode','price','price/sqft']].groupby('zipcode').agg({'id':'count','price':'mean','price/sqft':'mean'}).reset_index().rename(columns= {'zipcode':'Postal code','id':'Count','price':'Average price','price/sqft':'Average price/sqft'})
+     # st.dataframe(df)
+     AgGrid(df.round(3),fit_columns_on_grid_load=True)
 
 
      st.header("Where are these properties?")
