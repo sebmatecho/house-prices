@@ -2,7 +2,7 @@ import json
 # from tkinter import N
 from matplotlib import gridspec, ticker
 import folium
-
+import math
 import folium.plugins
 folium.plugins.MarkerCluster()
 
@@ -401,7 +401,8 @@ def load(data,geo_data):
      mapa = folium.Map(location=[data['lat'].mean(), data['long'].mean()], zoom_start=9)
      markercluster = MarkerCluster().add_to(mapa)
      # for _ , fila in data.iterrows():
-     number = floor(data.shape[0]/2)
+     
+     number = math.floor(data.shape[0]/2)
      for i in range(number):
           try: 
                folium.Marker([data.loc[i,'lat'],data.loc[i,'long']],
