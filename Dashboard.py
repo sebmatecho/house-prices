@@ -38,7 +38,7 @@ def folium_static(fig, width=1200, height=750):
     Height : int
         Height of result
     Note
-    ----
+    ----  
     If `height` is set on a `folium.Map` or `folium.Figure` object, 
     that value supersedes the values set with the keyword arguments of this function. 
     Example
@@ -403,14 +403,14 @@ def load(data,geo_data):
      # for _ , fila in data.iterrows():
      for i in range(data.shape[0]):
           folium.Marker([data.loc[i,'lat'],data.loc[i,'long']],#[fila['lat'],fila['long']],
-                         popup = 'Price: ${}, \n Date: {} \n {} # rooms \n {} # bathrooms \n Built in {} \n {} square foot \n Price per square foot: {}'.format(
-                         data.loc[i,'price'],
-                         data.loc[i,'date'],
-                         data.loc[i,'bedrooms'],
-                         data.loc[i,'bathrooms'],
-                         data.loc[i,'yr_built'], 
-                         data.loc[i,'sqft_living'], 
-                         data.loc[i,'price/sqft'])
+                         # popup = 'Price: ${}, \n Date: {} \n {} # rooms \n {} # bathrooms \n Built in {} \n {} square foot \n Price per square foot: {}'.format(
+                         # data.loc[i,'price'],
+                         # data.loc[i,'date'],
+                         # data.loc[i,'bedrooms'],
+                         # data.loc[i,'bathrooms'],
+                         # data.loc[i,'yr_built'], 
+                         # data.loc[i,'sqft_living'], 
+                         # data.loc[i,'price/sqft'])
           ).add_to(markercluster)
      folium_static(mapa, width=width, height=0.33*width)
 
