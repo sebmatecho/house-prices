@@ -366,12 +366,12 @@ def load(data,geo_data):
      ## Required Filters
 
      The houses have been divided into four groups of equal size, based on their price.
-     - The First Tier will contain information on properties that cost less than $321,950
-     - The Second Tier will contain information on properties that cost between $321,950 and $450,000
-     - The Third Tier will contain information on properties that cost between $450,000 and $645,000
-     - The Fourth Tier will contain information on properties that cost more than $645,000
+     - The First Tier will contain information on properties that cost less than \$321,950
+     - The Second Tier will contain information on properties that cost between \$321,950 and \$450,000
+     - The Third Tier will contain information on properties that cost between \$450,000 and \$645,000
+     - The Fourth Tier will contain information on properties that cost more than \$645,000
 
-     The zip code can be used as a proxy for locating a property in King County. See [here](https://www.zipdatamaps.com/king-wa-county-zipcodes) para más información. 
+     The zip code can be used as a proxy for locating a property in King County. See [here](https://www.zipdatamaps.com/king-wa-county-zipcodes) for more information. 
 
      ### Optional Filters
      In order to facilitate the exploration of the data, the user is free to select the necessary filters. Once you select the variable you want to use as a filter from the next menu, use the sliders on the left banner to manipulate the allowed values ​​of the variable. Please note that the inclusion and use of filters will also modify the figures presented in the rest of this page.
