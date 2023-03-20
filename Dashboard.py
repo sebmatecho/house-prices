@@ -401,19 +401,22 @@ def load(data,geo_data):
      mapa = folium.Map(location=[data['lat'].mean(), data['long'].mean()], zoom_start=9)
      markercluster = MarkerCluster().add_to(mapa)
      # for _ , fila in data.iterrows():
-     number = 15000#data.shape[0]
+     number = data.shape[0]
      i = 0
      while i < number:
-          folium.Marker([data.loc[i,'lat'],data.loc[i,'long']],#[fila['lat'],fila['long']],
-                         popup = 'Price: ${}, \n Date: {} \n {} # rooms \n {} # bathrooms \n Built in {} \n {} square foot \n Price per square foot: {}'.format(
-                         data.loc[i,'price'],
-                         data.loc[i,'date'],
-                         data.loc[i,'bedrooms'],
-                         data.loc[i,'bathrooms'],
-                         data.loc[i,'yr_built'], 
-                         data.loc[i,'sqft_living'], 
-                         data.loc[i,'price/sqft'])
-          ).add_to(markercluster)
+          try: 
+               folium.Marker([data.loc[i,'lat'],data.loc[i,'long']],#[fila['lat'],fila['long']],
+                              popup = 'Price: ${}, \n Date: {} \n {} # rooms \n {} # bathrooms \n Built in {} \n {} square foot \n Price per square foot: {}'.format(
+                              data.loc[i,'price'],
+                              data.loc[i,'date'],
+                              data.loc[i,'bedrooms'],
+                              data.loc[i,'bathrooms'],
+                              data.loc[i,'yr_built'], 
+                              data.loc[i,'sqft_living'], 
+                              data.loc[i,'price/sqft'])
+               ).add_to(markercluster)
+          except: 
+               None
           i+=1 
      folium_static(mapa, width=width, height=0.6*width)
 
