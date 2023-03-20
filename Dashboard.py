@@ -401,9 +401,9 @@ def load(data,geo_data):
      mapa = folium.Map(location=[data['lat'].mean(), data['long'].mean()], zoom_start=9)
      markercluster = MarkerCluster().add_to(mapa)
      # for _ , fila in data.iterrows():
+     data_aux = data.sample(15000)
      
-     number = math.floor(data.shape[0]*0.8)
-     for i in range(number):
+     for i in range(data_aux.shape[0]):
           try: 
                folium.Marker([data.loc[i,'lat'],data.loc[i,'long']],
                               # popup = 'test'
