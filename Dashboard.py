@@ -402,7 +402,7 @@ def load(data,geo_data):
      markercluster = MarkerCluster().add_to(mapa)
      # for _ , fila in data.iterrows():
      
-     number = math.floor(data.shape[0]*0.9)
+     number = math.floor(data.shape[0]*0.8)
      for i in range(number):
           try: 
                folium.Marker([data.loc[i,'lat'],data.loc[i,'long']],
