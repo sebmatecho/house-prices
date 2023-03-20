@@ -415,8 +415,8 @@ def load(data,geo_data):
                               data.loc[i,'sqft_living'], 
                               data.loc[i,'price/sqft'])
                ).add_to(markercluster)
-          except: 
-               None
+          except:
+               pass
           i+=1 
      folium_static(mapa, width=width, height=0.6*width)
 
