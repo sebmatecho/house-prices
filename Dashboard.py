@@ -403,7 +403,7 @@ def load(data,geo_data):
      # for _ , fila in data.iterrows():
      number = data.shape[0]
      i = 0
-     while i < 100:
+     while i < number:
           folium.Marker([data.loc[i,'lat'],data.loc[i,'long']],#[fila['lat'],fila['long']],
                          popup = 'Price: ${}, \n Date: {} \n {} # rooms \n {} # bathrooms \n Built in {} \n {} square foot \n Price per square foot: {}'.format(
                          data.loc[i,'price'],
