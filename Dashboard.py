@@ -402,8 +402,7 @@ def load(data,geo_data):
      markercluster = MarkerCluster().add_to(mapa)
      # for _ , fila in data.iterrows():
      number = data.shape[0]
-     i = 0
-     while i < number:
+     for i in range(number):
           try: 
                folium.Marker([data.loc[i,'lat'],data.loc[i,'long']],#[fila['lat'],fila['long']],
                               popup = 'Price: ${}, \n Date: {} \n {} # rooms \n {} # bathrooms \n Built in {} \n {} square foot \n Price per square foot: {}'.format(
@@ -416,8 +415,7 @@ def load(data,geo_data):
                               data.loc[i,'price/sqft'])
                ).add_to(markercluster)
           except:
-               pass
-          i+=1 
+               pass 
      folium_static(mapa, width=width, height=0.6*width)
 
      st.markdown(
