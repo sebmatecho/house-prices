@@ -402,19 +402,19 @@ def load(data,geo_data):
      markercluster = MarkerCluster().add_to(mapa)
      # for _ , fila in data.iterrows():
      
-     number = math.floor(data.shape[0]/2)
+     number = math.floor(data.shape[0]*0.8)
      for i in range(number):
           try: 
                folium.Marker([data.loc[i,'lat'],data.loc[i,'long']],
-                              popup = 'test'
-                              # 'Price: ${}, \n Date: {} \n {} # rooms \n {} # bathrooms \n Built in {} \n {} square foot \n Price per square foot: {}'.format(
-                              # data.loc[i,'price'],
-                              # data.loc[i,'date'],
-                              # data.loc[i,'bedrooms'],
-                              # data.loc[i,'bathrooms'],
-                              # data.loc[i,'yr_built'], 
-                              # data.loc[i,'sqft_living'], 
-                              # data.loc[i,'price/sqft'])
+                              # popup = 'test'
+                              popup = 'Price: ${}, \n Date: {} \n {} # rooms \n {} # bathrooms \n Built in {} \n {} square foot \n Price per square foot: {}'.format(
+                              data.loc[i,'price'],
+                              data.loc[i,'date'],
+                              data.loc[i,'bedrooms'],
+                              data.loc[i,'bathrooms'],
+                              data.loc[i,'yr_built'], 
+                              data.loc[i,'sqft_living'], 
+                              data.loc[i,'price/sqft'])
                ).add_to(markercluster)
           except:
                pass 
