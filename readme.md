@@ -12,7 +12,7 @@ This project was proposed as way to showcase my skills, as part of my [Data Scie
 #### Technologies
 - Python (Pandas, Folium, Sckit-Learn, etc)
 - Streamlit 
-- Heroku
+- AWS
 
 ## Project Overview
 This project aims to generate value out of one year of historical information of housing dynamics in King County (WA). This dataset is available in [Kaggle](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction). The dataset contains information about number of rooms, bathrooms, location (latitude and longitude), number of floors, waterfront, view of water mark, construction assessment, footage and specially, price, among others.
