@@ -58,7 +58,7 @@ After selecting the XGBoost model, a random search procedure was implemented in 
 |XGboost	|0.23538+/-0.01|	0.08858+/-0.01|	0.29733+/-0.01	|0.634+/-0.01|
 ## Deployment
 
-The entire app was developed using Streamlit. It would include two main pages, one providing information for the dynamics of the housing market while the second one would suggest prices, based on the Machine Learning model, once the specifics of the property of interest were input by user. It was deployed within Heroku and the final version (fully functional) might be found [here](https://dashboardhouseprices2.herokuapp.com/). 
+The entire app was developed using Streamlit. It would include two main pages, one providing information for the dynamics of the housing market while the second one would suggest prices, based on the Machine Learning model, once the specifics of the property of interest were input by user. It was deployed within a EC2 instance on AWS. 
 
 ## Feedback
 Feedback is always a gift, specially the constructive it. Please, feel free to reach out to slozanof1991 at gmail dot com to provide any, if available. Thank you. 
